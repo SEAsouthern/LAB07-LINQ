@@ -1,6 +1,6 @@
 ﻿using System;
 using Newtonsoft;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace LAB07_LINQ
 {
