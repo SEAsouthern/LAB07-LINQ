@@ -8,6 +8,7 @@ namespace LAB07_LINQ.Classes
 {
     public class RootObject
     {
+        [JsonProperty("type")]
         public string type { get; set; }
         [JsonProperty("features")]
         public List<Feature> features { get; set; }
