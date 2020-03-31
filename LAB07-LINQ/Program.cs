@@ -15,6 +15,7 @@ namespace LAB07_LINQ
             PrintCombined();
         }
 
+        //This method prints out the entire list of neighborhood names with no editing
         static void ReadingFile()
         {
             try
@@ -31,6 +32,7 @@ namespace LAB07_LINQ
             Console.Read();
         }
 
+        //This method prints out the list of neighborhoods with no spaces
         static void PrintNoSpacNeighborhoods()
         {
             try
@@ -86,6 +88,8 @@ namespace LAB07_LINQ
             }
         }
 
+
+        //This method prints out all 3 different lists.
         static void PrintCombined()
         {
             try
@@ -103,6 +107,7 @@ namespace LAB07_LINQ
                 Console.WriteLine(e.Message);
             }
         }
+
 
         static void Combined(RootObject data)
         {
@@ -127,7 +132,26 @@ namespace LAB07_LINQ
             
         }
 
-        static void Combined2(RootObject data)
+        //This method prints out the Distinct list only using the opposing method
+        static void PrintDistinct2()
+        {
+            try
+            {
+                String nyData = File.ReadAllText("C:/Users/Matthew/source/repos/LAB07-LINQ/LAB07-LINQ/data.json");
+                // first parse the data and then for each item in the features collection we want to print out the "neighborhoods" string
+                RootObject parsedNyData = JsonConvert.DeserializeObject<RootObject>(nyData);
+
+                Distinct2(parsedNyData);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("There was an error reading your file");
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static void Distinct2(RootObject data)
         {
             var x = data.features.Select(x =>x);
           
